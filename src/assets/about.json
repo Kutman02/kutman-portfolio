@@ -1,0 +1,67 @@
+{
+  "personalInfo": {
+    "name": "Кутман",
+    "profession": "Frontend Developer",
+    "description": "Я frontend разработчик, специализирующийся на создании современных веб-приложений",
+    "technologies": [
+      "JavaScript",
+      "React.js",
+      "HTML5",
+      "CSS3",
+      "Sass/SCSS",
+      "Git",
+      "Responsive Design",
+      "TypeScript",
+      "Redux"
+    ],
+    "contacts": {
+      "email": "your.email@example.com",
+      "github": "https://github.com/yourusername",
+      "linkedin": "https://linkedin.com/in/yourusername"
+    }
+  },
+  "name": "Кутман",
+  "title": "Frontend Разработчик",
+  "description": "Я frontend разработчик с страстью к созданию современных веб-приложений. Специализируюсь на React и современных JavaScript технологиях.",
+  "skills": [
+    {
+      "category": "Frontend",
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Redux",
+        "Next.js",
+        "Tailwind CSS",
+        "SASS"
+      ]
+    },
+    {
+      "category": "Инструменты разработки",
+      "technologies": ["Git", "Webpack", "Vite", "npm", "yarn", "VS Code"]
+    },
+    {
+      "category": "Soft Skills",
+      "technologies": ["Работа в команде", "Решение проблем", "Коммуникация", "Тайм-менеджмент"]
+    }
+  ],
+  "experience": [
+    {
+      "position": "Frontend Разработчик",
+      "company": "IT Solutions",
+      "period": "2023 - настоящее время",
+      "responsibilities": [
+        "Разработка пользовательских интерфейсов на React",
+        "Оптимизация производительности веб-приложений",
+        "Работа с REST API"
+      ]
+    }
+  ],
+  "education": {
+    "degree": "Бакалавр Компьютерных Наук",
+    "university": "Технический Университет",
+    "year": "2023"
+  }
+}

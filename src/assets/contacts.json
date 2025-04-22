@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "email": "kutman@example.com",
+    "phone": "+996 XXX XXX XXX",
+    "location": "Бишкек, Кыргызстан",
+    "socials": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/kutman",
+        "icon": "github"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/kutman",
+        "icon": "linkedin"
+      },
+      {
+        "platform": "Telegram",
+        "url": "https://t.me/kutman",
+        "icon": "telegram"
+      }
+    ],
+    "availableFor": [
+      "Полная занятость",
+      "Частичная занятость",
+      "Фриланс проекты",
+      "Открыт к предложениям"
+    ]
+  }
+}

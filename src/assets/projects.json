@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-commerce Platform",
+      "description": "Современный интернет-магазин с использованием React и Redux",
+      "technologies": ["React", "Redux", "Material-UI", "Node.js"],
+      "image": "https://via.placeholder.com/350x200",
+      "github": "https://github.com/username/ecommerce",
+      "demo": "https://ecommerce-demo.example.com",
+      "features": [
+        "Каталог продуктов",
+        "Корзина покупок",
+        "Система аутентификации",
+        "Платёжная интеграция"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Task Manager",
+      "description": "Приложение для управления задачами с drag-and-drop функционалом",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
+      "image": "https://via.placeholder.com/350x200",
+      "github": "https://github.com/username/task-manager",
+      "demo": "https://task-manager-demo.example.com",
+      "features": [
+        "Drag-and-drop интерфейс",
+        "Реальное время обновлений",
+        "Коллаборация в команде",
+        "Уведомления"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Weather Dashboard",
+      "description": "Погодное приложение с использованием OpenWeather API",
+      "technologies": ["React", "Chart.js", "CSS3", "REST API"],
+      "image": "https://via.placeholder.com/350x200",
+      "github": "https://github.com/username/weather-app",
+      "demo": "https://weather-demo.example.com",
+      "features": [
+        "Прогноз погоды на 7 дней",
+        "Графики температуры",
+        "Геолокация",
+        "Поиск по городам"
+      ]
+    }
+  ]
+}
