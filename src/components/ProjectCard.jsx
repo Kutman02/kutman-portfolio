@@ -1,7 +1,13 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useState } from 'react';
 
 function ProjectCard({ title, description, image, technologies, link }) {
   const [ref, isVisible] = useScrollAnimation();
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <div
@@ -9,12 +15,19 @@ function ProjectCard({ title, description, image, technologies, link }) {
       className={`card group transform transition-all duration-700 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}>
-      <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-        />
+      <div className="relative overflow-hidden rounded-lg mb-4 aspect-video bg-gray-700">
+        {!imageError ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+            onError={handleImageError}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-gray-400">
+            <span>{title}</span>
+          </div>
+        )}
       </div>
       <h3 className="text-xl sm:text-2xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-300 text-sm sm:text-base mb-4">{description}</p>

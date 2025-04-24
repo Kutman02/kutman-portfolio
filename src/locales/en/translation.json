@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "profession": "Web Developer",
+    "description": "I create modern and responsive web applications"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Experienced developer focused on creating quality web solutions",
+    "profession": "Frontend Developer",
+    "longDescription": "I'm a frontend developer passionate about creating modern web applications. I specialize in React and modern JavaScript technologies.",
+    "education": {
+      "degree": "Bachelor of Computer Science",
+      "university": "Technical University"
+    },
+    "skills": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "sourceCode": "Source Code"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "phone": "Phone",
+    "location": "Location",
+    "availableFor": {
+      "title": "Available for",
+      "options": {
+        "fullTime": "Full-time",
+        "partTime": "Part-time",
+        "freelance": "Freelance projects",
+        "open": "Open to offers"
+      }
+    }
+  },
+  "personal": {
+    "name": "Kutman",
+    "role": "Frontend Developer",
+    "description": "Creating modern and responsive web applications",
+    "fullName": "Kutmanbek"
+  },
+  "skills": {
+    "categories": {
+      "frontend": "Frontend",
+      "devTools": "Development Tools",
+      "softSkills": "Soft Skills"
+    }
+  }
+}

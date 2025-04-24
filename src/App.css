@@ -12,6 +12,8 @@ body {
   background-color: #111827;
   color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
+  touch-action: pan-y pinch-zoom;
 }
 
 /* Кастомный скроллбар */
@@ -91,4 +93,9 @@ a:active {
   height: 2px;
   background: #3b82f6;
   border-radius: 2px;
+}
+
+.min-h-screen {
+  position: relative;
+  overflow-x: hidden;
 }
