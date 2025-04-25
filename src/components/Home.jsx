@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import ProfilePhoto from '../assets/profile';
 function Home() {
   const { t } = useTranslation();
 
@@ -9,8 +8,8 @@ function Home() {
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="relative w-64 h-64 md:w-80 md:h-80">
             <img
-              src={ProfilePhoto.photo}
-              //alt={personalInfo.name}
+              src={t('img.profilePhoto')}
+              alt={t('img.profilePhotoAlt')}
               className="rounded-full object-cover w-full h-full shadow-2xl border-4 border-blue-500"
             />
           </div>
@@ -26,10 +25,10 @@ function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
               <a href="#projects" className="button-primary w-full sm:w-auto">
-                {t('home.projectsButton')}
+                {t('Projects.ViewProjects')}
               </a>
               <a href="#contact" className="button-secondary w-full sm:w-auto">
-                {t('home.contactButton')}
+                {t('contact.title')}
               </a>
             </div>
           </div>

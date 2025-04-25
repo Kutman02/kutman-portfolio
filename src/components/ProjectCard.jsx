@@ -1,9 +1,12 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 function ProjectCard({ title, description, image, technologies, link }) {
   const [ref, isVisible] = useScrollAnimation();
   const [imageError, setImageError] = useState(false);
+  const { t } = useTranslation();
 
   const handleImageError = () => {
     setImageError(true);
@@ -45,7 +48,7 @@ function ProjectCard({ title, description, image, technologies, link }) {
         target="_blank"
         rel="noopener noreferrer"
         className="button-primary inline-block w-full sm:w-auto text-center">
-        Посмотреть проект
+        {t('Projects.ViewProject')}
       </a>
     </div>
   );

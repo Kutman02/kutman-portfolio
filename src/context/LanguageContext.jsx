@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import enTranslations from '../locales/en.json';
-import ruTranslations from '../locales/ru.json';
-import { LanguageContext } from './languageContextInstance';
+import enTranslations from '../locales/en/translation.json';
+import ruTranslations from '../locales/ru/translation.json';
+import { LanguageContext } from './LanguageContextInstance';
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('ru');

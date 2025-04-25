@@ -7,7 +7,7 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "profession": "Web Developer",
+    "profession": "Frontend Developer",
     "description": "I create modern and responsive web applications"
   },
   "about": {
@@ -23,30 +23,17 @@
   },
   "projects": {
     "title": "Projects",
-    "viewProject": "View Project",
-    "sourceCode": "Source Code"
+    "viewProject": "View Project"
   },
   "contact": {
     "title": "Contact Me",
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send",
-    "phone": "Phone",
-    "location": "Location",
-    "availableFor": {
-      "title": "Available for",
-      "options": {
-        "fullTime": "Full-time",
-        "partTime": "Part-time",
-        "freelance": "Freelance projects",
-        "open": "Open to offers"
-      }
-    }
+    "send": "Send"
   },
   "personal": {
     "name": "Kutman",
-    "role": "Frontend Developer",
     "description": "Creating modern and responsive web applications",
     "fullName": "Kutmanbek"
   },
@@ -56,5 +43,14 @@
       "devTools": "Development Tools",
       "softSkills": "Soft Skills"
     }
+  },
+  "img": {
+    "profilePhoto": "https://keephere.ru/get/HNAULXgZxfX/o/photo.jpg",
+    "profilePhotoAlt": "Profile photo of Kutmanbek"
+  },
+  "Projects": {
+    "myProjects": "My Projects",
+    "ViewProject": "View Project",
+    "ViewProjects": "View Projects"
   }
 }

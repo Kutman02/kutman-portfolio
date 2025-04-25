@@ -1,4 +1,3 @@
-import aboutData from '../assets/about.json';
 import SkillBadge from './SkillBadge';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useTranslation } from 'react-i18next';
@@ -8,10 +7,8 @@ function About() {
   const [leftRef, isLeftVisible] = useScrollAnimation();
   const [rightRef, isRightVisible] = useScrollAnimation(0.2);
 
-  // Преобразуем массив навыков в плоский массив
-  const flattenedSkills = aboutData.skills.reduce((acc, skillGroup) => {
-    return [...acc, ...skillGroup.technologies];
-  }, []);
+  // Создаем массив навыков на основе категорий
+  const skills = Object.values(t('skills.categories', { returnObjects: true }));
 
   return (
     <section id="about" className="py-16 md:py-24 bg-gray-800/50">
@@ -24,11 +21,8 @@ function About() {
               isLeftVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
             }`}>
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-              {t('about.description')}
+              {t('about.longDescription')}
             </p>
-            <a href={aboutData.resumeLink} className="button-primary inline-block">
-              {t('about.downloadResume')}
-            </a>
           </div>
 
           <div
@@ -38,7 +32,7 @@ function About() {
             }`}>
             <h3 className="text-xl sm:text-2xl font-semibold mb-4 md:mb-6">{t('about.skills')}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-              {flattenedSkills.map((skill, index) => (
+              {skills.map((skill, index) => (
                 <SkillBadge key={index} skill={skill} />
               ))}
             </div>
