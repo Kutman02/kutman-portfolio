@@ -30,7 +30,8 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "formDisabled": "⚠️The form is currently not working. Please contact us in other ways."
   },
   "personal": {
     "name": "Kutman",

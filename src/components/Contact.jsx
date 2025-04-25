@@ -40,7 +40,9 @@ function Contact() {
               </a>
             ))}
           </div>
-
+          <div className="text-red-200 font-semibold text-sm sm:text-base mb-4">
+            {t('contact.formDisabled')}
+          </div>
           <form
             ref={formRef}
             className={`space-y-6 transform transition-all duration-700 ${
