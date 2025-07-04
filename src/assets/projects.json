@@ -2,19 +2,20 @@
   "projects": [
     {
       "id": 1,
-      "title": "E-commerce Platform",
-      "description": "Современный интернет-магазин с использованием React и Redux",
-      "technologies": ["React", "Redux", "Material-UI", "Node.js"],
-      "image": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "github": "https://github.com/username/ecommerce",
-      "demo": "#",
+      "title": "KutMovies — Онлайн каталог фильмов",
+      "description": "Интерактивный сайт с базой фильмов, реализованный на React с Redux Toolkit и маршрутизацией",
+      "technologies": ["React", "Redux Toolkit", "React Router", "TypeScript", "Tailwind CSS"],
+      "image": "https://keephere.ru/get/LNDPXYE5-A7/o/photo.jpg",
+      "github": "https://github.com/Kutman02/KutMovies",
+      "demo": "https://kut-movies.vercel.app/",
       "features": [
-        "Каталог продуктов",
-        "Корзина покупок",
-        "Система аутентификации",
-        "Платёжная интеграция"
+        "Поиск и фильтрация фильмов",
+        "Детальные страницы с описанием и трейлером",
+        "Сохранение избранного в localStorage",
+        "Адаптивный дизайн под мобильные устройства"
       ]
     },
+
     {
       "id": 2,
       "title": "Task Manager",
