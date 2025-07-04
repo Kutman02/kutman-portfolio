@@ -18,17 +18,17 @@
 
     {
       "id": 2,
-      "title": "Task Manager",
-      "description": "Приложение для управления задачами с drag-and-drop функционалом",
-      "technologies": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
-      "image": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "github": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "demo": "#",
+      "title": "Генератор кодов для клиентов",
+      "description": "Приложение на React для генерации уникальных кодов заказов с возможностью их копирования и просмотра истории.",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "LocalStorage"],
+      "image": "https://keephere.ru/get/9NDPYAvdz34/o/photo.jpg",
+      "github": "https://github.com/Kutman02/ClientCode",
+      "demo": "https://client-code-pearl.vercel.app/",
       "features": [
-        "Drag-and-drop интерфейс",
-        "Реальное время обновлений",
-        "Коллаборация в команде",
-        "Уведомления"
+        "Генерация случайного кода по нажатию кнопки",
+        "История последних 3 кодов с сохранением в localStorage",
+        "Кнопка копирования кода в буфер обмена",
+        "Адаптивный и минималистичный UI"
       ]
     },
     {
