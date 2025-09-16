@@ -1,12 +1,31 @@
-# React + Vite
+# Kutman Portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Посмотреть проект онлайн](https://kutman-portf.vercel.app)
 
-Currently, two official plugins are available:
+Kutman Portfolio — это современный и адаптивный личный сайт-портфолио, созданный с использованием **React**, **Vite**, **Tailwind CSS** и **ESLint**. Проект демонстрирует навыки работы с современными инструментами разработки и предоставляет чистый и быстрый интерфейс для пользователей.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 Основные функции
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Просмотр списка проектов с изображениями, названиями и описаниями.
+- Адаптивный дизайн, подходящий для различных устройств.
+- Чистый и структурированный код, соответствующий современным стандартам.
+
+---
+
+## 🛠 Технологии
+
+- **Frontend:** React, Vite
+- **Стилизация:** Tailwind CSS
+- **Инструменты разработки:** ESLint, Prettier
+
+---
+
+## 🚀 Установка и запуск
+
+1. Клонируйте репозиторий:
+
+   ```bash
+   git clone https://github.com/Kutman02/kutman-portfolio.git
+   cd kutman-portfolio
