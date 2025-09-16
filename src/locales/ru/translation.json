@@ -52,6 +52,7 @@
   "Projects": {
     "myProjects": "Мои проекты",
     "ViewProject": "Посмотреть проект",
-    "ViewProjects": "Посмотреть проекты"
+    "ViewProjects": "Посмотреть проекты",
+    "ViewRepo": "Смотреть репозиторий"
   }
 }

@@ -5,7 +5,7 @@
       "title": "KutMovies — Онлайн каталог фильмов",
       "description": "Интерактивный сайт с базой фильмов, реализованный на React с Redux Toolkit и маршрутизацией",
       "technologies": ["React", "Redux Toolkit", "React Router", "TypeScript", "Tailwind CSS"],
-      "image": "https://keephere.ru/get/LNDPXYE5-A7/o/photo.jpg",
+      "image": "https://keephere.ru/get/kNGTMH_NDkL/o/photo.jpg",
       "github": "https://github.com/Kutman02/KutMovies",
       "demo": "https://kut-movies.vercel.app/",
       "features": [
@@ -21,7 +21,7 @@
       "title": "Генератор кодов для клиентов",
       "description": "Приложение на React для генерации уникальных кодов заказов с возможностью их копирования и просмотра истории.",
       "technologies": ["React", "TypeScript", "Tailwind CSS", "LocalStorage"],
-      "image": "https://keephere.ru/get/9NDPYAvdz34/o/photo.jpg",
+      "image": "https://keephere.ru/get/yNGTMQPDQ0k/o/photo.jpg",
       "github": "https://github.com/Kutman02/ClientCode",
       "demo": "https://client-code-pearl.vercel.app/",
       "features": [
@@ -33,34 +33,37 @@
     },
     {
       "id": 3,
-      "title": "Weather Dashboard",
-      "description": "Погодное приложение с использованием OpenWeather API",
-      "technologies": ["React", "Chart.js", "CSS3", "REST API"],
-      "image": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "github": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "demo": "#",
+      "title": "Online Cinema Vite",
+      "description": "Онлайн-кинотеатр с фильтрацией, избранным и адаптивным интерфейсом",
+      "technologies": ["React", "Vite", "Redux Toolkit", "TypeScript", "TailwindCSS"],
+      "image": "https://keephere.ru/get/4NGTKs0P5oV/o/photo.jpg",
+      "github": "https://github.com/Kutman02/online-cinemaVite",
+      "demo": "https://online-cinema-vite.vercel.app/",
       "features": [
-        "Прогноз погоды на 7 дней",
-        "Графики температуры",
-        "Геолокация",
-        "Поиск по городам"
+        "Каталог фильмов",
+        "Фильтрация и поиск",
+        "Избранное",
+        "Адаптивный дизайн",
+        "Оптимизированный билд на Vite"
       ]
     },
     {
       "id": 4,
-      "title": "E-commerce Platform",
-      "description": "Современный интернет-магазин с использованием React и Redux",
-      "technologies": ["React", "Redux", "Material-UI", "Node.js"],
-      "image": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "github": "https://github.com/username/ecommerce",
-      "demo": "#",
+      "title": "KutGo Delivery",
+      "description": "Сервис доставки с удобным интерфейсом и управлением заказами",
+      "technologies": ["React", "Vite", "Redux Toolkit", "TypeScript", "TailwindCSS"],
+      "image": "https://keephere.ru/get/hNGTLvh7gD3/o/photo.jpg",
+      "github": "https://github.com/Kutman02/KutGo",
+      "demo": "https://kutgo-delivery.vercel.app/",
       "features": [
-        "Каталог продуктов",
-        "Корзина покупок",
-        "Система аутентификации",
-        "Платёжная интеграция"
+        "Каталог товаров и услуг",
+        "Корзина заказов",
+        "Авторизация и регистрация",
+        "Управление профилем",
+        "Адаптивный интерфейс"
       ]
     },
+    
     {
       "id": 5,
       "title": "Task Manager",

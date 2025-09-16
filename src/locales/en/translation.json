@@ -52,6 +52,7 @@
   "Projects": {
     "myProjects": "My Projects",
     "ViewProject": "View Project",
-    "ViewProjects": "View Projects"
+    "ViewProjects": "View Projects",
+    "ViewRepo": "View Repository"
   }
 }

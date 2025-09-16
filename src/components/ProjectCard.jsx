@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-function ProjectCard({ title, description, image, technologies, link }) {
+function ProjectCard({ title, description, image, technologies, link, github }) {
   const [ref, isVisible] = useScrollAnimation();
   const [imageError, setImageError] = useState(false);
   const { t } = useTranslation();
@@ -43,13 +43,24 @@ function ProjectCard({ title, description, image, technologies, link }) {
           </span>
         ))}
       </div>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="button-primary inline-block w-full sm:w-auto text-center">
-        {t('Projects.ViewProject')}
-      </a>
+      <div className="flex flex-col sm:flex-row gap-3">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button-primary inline-block w-full sm:w-auto text-center">
+          {t('Projects.ViewProject')}
+        </a>
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button-primary inline-block w-full sm:w-auto text-center">
+            {t('Projects.ViewRepo')}
+          </a>
+        )}
+      </div>
     </div>
   );
 }
