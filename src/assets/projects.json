@@ -62,37 +62,6 @@
         "Управление профилем",
         "Адаптивный интерфейс"
       ]
-    },
-    
-    {
-      "id": 5,
-      "title": "Task Manager",
-      "description": "Приложение для управления задачами с drag-and-drop функционалом",
-      "technologies": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
-      "image": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "github": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "demo": "#",
-      "features": [
-        "Drag-and-drop интерфейс",
-        "Реальное время обновлений",
-        "Коллаборация в команде",
-        "Уведомления"
-      ]
-    },
-    {
-      "id": 6,
-      "title": "Weather Dashboard",
-      "description": "Погодное приложение с использованием OpenWeather API",
-      "technologies": ["React", "Chart.js", "CSS3", "REST API"],
-      "image": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "github": "https://keephere.ru/get/aNAWZLZTcqZ/o/photo.jpg",
-      "demo": "#",
-      "features": [
-        "Прогноз погоды на 7 дней",
-        "Графики температуры",
-        "Геолокация",
-        "Поиск по городам"
-      ]
     }
   ]
 }
