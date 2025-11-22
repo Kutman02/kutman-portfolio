@@ -54,7 +54,7 @@
       "technologies": ["React", "Vite", "Redux Toolkit", "TypeScript", "TailwindCSS"],
       "image": "https://keephere.ru/get/hNGTLvh7gD3/o/photo.jpg",
       "github": "https://github.com/Kutman02/KutGo",
-      "demo": "https://kutgo-delivery.vercel.app/",
+      "demo": "https://kut-go.vercel.app/",
       "features": [
         "Каталог товаров и услуг",
         "Корзина заказов",
