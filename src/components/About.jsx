@@ -7,8 +7,12 @@ function About() {
   const [leftRef, isLeftVisible] = useScrollAnimation();
   const [rightRef, isRightVisible] = useScrollAnimation(0.2);
 
-  // Создаем массив навыков на основе категорий
-  const skills = Object.values(t('skills.categories', { returnObjects: true }));
+  // Получаем категории и skills
+  const categories = t('skills.categories', { returnObjects: true });
+
+  // собираем skills из каждой категории
+  const skills = Object.values(categories)
+    .flatMap(category => category.items || []);
 
   return (
     <section id="about" className="py-16 md:py-24 bg-gray-800/50">
@@ -19,7 +23,8 @@ function About() {
             ref={leftRef}
             className={`space-y-4 sm:space-y-6 transform transition-all duration-700 ${
               isLeftVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-            }`}>
+            }`}
+          >
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               {t('about.longDescription')}
             </p>
@@ -29,7 +34,8 @@ function About() {
             ref={rightRef}
             className={`transform transition-all duration-700 ${
               isRightVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'
-            }`}>
+            }`}
+          >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4 md:mb-6">{t('about.skills')}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
               {skills.map((skill, index) => (

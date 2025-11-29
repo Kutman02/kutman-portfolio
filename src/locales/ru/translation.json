@@ -5,10 +5,10 @@
     "projects": "Проекты",
     "contact": "Контакты"
   },
-  "hero": {
-    "greeting": "Привет, я",
-    "profession": "Frontend-разработчик",
-    "description": "Я создаю современные и адаптивные веб-приложения"
+"hero": {
+  "greeting": "Привет, я",
+  "profession": "Frontend-разработчик",
+  "description": "Разрабатываю удобные веб-интерфейсы с акцентом на скорость, качество и поддерживаемость."
   },
   "about": {
     "title": "Обо мне",
@@ -34,17 +34,71 @@
     "formDisabled": "⚠️В данный момент форма не работает. Пожалуйста, обращайтесь другими способами."
   },
   "personal": {
-    "name": "Кутман",
+    "name": "Кутманбек",
     "description": "Создаю современные и адаптивные веб-приложения",
     "fullName": "Кутманбек"
   },
-  "skills": {
-    "categories": {
-      "frontend": "Фронтенд",
-      "devTools": "Инструменты разработки",
-      "softSkills": "Гибкие навыки"
+"skills": {
+  "categories": {
+    "frontend": {
+      "title": "Frontend",
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "SASS/SCSS",
+        "Bootstrap",
+        "Material UI",
+        "Ant Design",
+        "shadcn/ui",
+        "Emotion",
+        "Zustand",
+        "Redux",
+        "Context API",
+        "React Query",
+        "Web Components"
+      ]
+    },
+
+    "devTools": {
+      "title": "Development Tools",
+      "items": [
+        "Vite",
+        "Webpack",
+        "Turbopack",
+        "Axios",
+        "Figma",
+        "Git",
+        "GitHub",
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "Prisma",
+        "MongoDB",
+        "PostgreSQL",
+        "Supabase",
+        "Heroku",
+        "Vercel"
+      ]
+    },
+
+    "softSkills": {
+      "title": "Soft Skills",
+      "items": []
+    },
+
+    "languages": {
+      "title": "Languages",
+      "items": [
+        "Python"
+      ]
     }
-  },
+  }
+},
   "img": {
     "profilePhoto": "https://keephere.ru/get/HNAULXgZxfX/o/photo.jpg",
     "profilePhotoAlt": "Фото профиля Кутманбека"
