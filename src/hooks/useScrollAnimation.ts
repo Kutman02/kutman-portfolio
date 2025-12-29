@@ -1,7 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+/**
+ * @fileoverview Хук для анимации при скролле
+ */
 
-export function useScrollAnimation(threshold = 0.1) {
-  const ref = useRef(null);
+import { useEffect, useRef, useState, RefObject } from 'react';
+
+/**
+ * Хук для анимации элементов при скролле
+ * @param threshold - Порог видимости (0-1)
+ * @returns [ref, isVisible]
+ */
+export function useScrollAnimation(threshold = 0.1): [RefObject<HTMLDivElement>, boolean] {
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

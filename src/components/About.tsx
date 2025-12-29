@@ -1,18 +1,31 @@
+/**
+ * @fileoverview Компонент секции "Обо мне"
+ */
+
+import { useEffect } from 'react';
 import SkillBadge from './SkillBadge';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { fetchSkills } from '../store/slices/skillsSlice';
+import type { Skill } from '../types/models';
 
+/**
+ * Компонент секции "Обо мне"
+ */
 function About() {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
   const [leftRef, isLeftVisible] = useScrollAnimation();
   const [rightRef, isRightVisible] = useScrollAnimation(0.2);
+  const skills = useAppSelector((state) => state.skills.items);
 
-  // Получаем категории и skills
-  const categories = t('skills.categories', { returnObjects: true });
+  useEffect(() => {
+    dispatch(fetchSkills());
+  }, [dispatch]);
 
-  // собираем skills из каждой категории
-  const skills = Object.values(categories)
-    .flatMap(category => category.items || []);
+  // Собираем все навыки из всех категорий
+  const allSkills = skills.flatMap((skill: Skill) => skill.items || []);
 
   return (
     <section id="about" className="py-16 md:py-24 bg-gray-800/50">
@@ -38,7 +51,7 @@ function About() {
           >
             <h3 className="text-xl sm:text-2xl font-semibold mb-4 md:mb-6">{t('about.skills')}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-              {skills.map((skill, index) => (
+              {allSkills.map((skill: string, index: number) => (
                 <SkillBadge key={index} skill={skill} />
               ))}
             </div>
