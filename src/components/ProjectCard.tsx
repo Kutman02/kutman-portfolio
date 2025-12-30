@@ -5,7 +5,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa';
 import type { ProjectCardProps } from '../types/components';
 
@@ -16,7 +15,6 @@ function ProjectCard({ id, title, description, image, technologies, link, github
   const [ref, isVisible] = useScrollAnimation();
   const [imageError, setImageError] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const { t } = useTranslation();
 
   const handleImageError = () => {
     setImageError(true);
@@ -106,7 +104,7 @@ function ProjectCard({ id, title, description, image, technologies, link, github
             to={`/project/${id}`}
             className="group/btn flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-sm font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40"
           >
-            <span>{t('Projects.ViewProject')}</span>
+            <span>Посмотреть проект</span>
             <FaArrowRight className="text-xs group-hover/btn:translate-x-1 transition-transform duration-300" />
           </Link>
           {github && (
@@ -117,7 +115,7 @@ function ProjectCard({ id, title, description, image, technologies, link, github
               className="flex items-center justify-center gap-2 px-4 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white text-sm font-semibold rounded-lg transition-all duration-300 backdrop-blur-sm"
             >
               <FaGithub />
-              <span>{t('Projects.ViewRepo')}</span>
+              <span>Репозиторий</span>
             </a>
           )}
         </div>

@@ -1,15 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 
 function Navbar() {
-  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'ru' ? 'en' : 'ru';
-    i18n.changeLanguage(newLang);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,11 +28,6 @@ function Navbar() {
               className="text-xl sm:text-2xl font-bold hover:text-blue-400 transition-colors">
               KutSoft
             </a>
-            <button
-              onClick={toggleLanguage}
-              className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none transition-colors">
-              {i18n.language === 'ru' ? 'EN' : 'RU'}
-            </button>
           </div>
 
           {/* Mobile menu button - фиксированная ширина и позиционирование */}
@@ -71,16 +59,16 @@ function Navbar() {
           {/* Desktop menu */}
           <div className="hidden md:flex md:items-center md:space-x-8 flex-none">
             <a href="#home" className="nav-link">
-              {t('nav.home')}
+              Главная
             </a>
             <a href="#about" className="nav-link">
-              {t('nav.about')}
+              Обо мне
             </a>
             <a href="#projects" className="nav-link">
-              {t('nav.projects')}
+              Проекты
             </a>
             <a href="#contact" className="nav-link">
-              {t('nav.contact')}
+              Контакты
             </a>
           </div>
         </div>
@@ -95,16 +83,16 @@ function Navbar() {
           <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg mt-2">
             <div className="py-2 space-y-1">
               <a href="#home" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-                {t('nav.home')}
+                Главная
               </a>
               <a href="#about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-                {t('nav.about')}
+                Обо мне
               </a>
               <a href="#projects" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-                {t('nav.projects')}
+                Проекты
               </a>
               <a href="#contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-                {t('nav.contact')}
+                Контакты
               </a>
             </div>
           </div>

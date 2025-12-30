@@ -3,7 +3,6 @@
  */
 
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fetchProfile } from '../store/slices/profileSlice';
 import { fetchResume } from '../store/slices/resumeSlice';
@@ -56,7 +55,6 @@ function ResumeButtons() {
 }
 
 function Home() {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const profile = useAppSelector((state) => state.profile);
 
@@ -65,7 +63,7 @@ function Home() {
   }, [dispatch]);
 
   const profilePhoto = profile.profilePhoto || 'https://keephere.ru/get/HNAULXgZxfX/o/photo.jpg';
-  const profilePhotoAlt = profile.profilePhotoAlt || 'Profile photo';
+  const profilePhotoAlt = profile.profilePhotoAlt || 'Фото профиля';
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -87,17 +85,17 @@ function Home() {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="block text-white mb-2">
-                  {t('hero.greeting')}
+                  Привет, я
                 </span>
                 <span className="block bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-                  {t('hero.profession')}
+                  Frontend-разработчик
                 </span>
               </h1>
             </div>
 
             {/* Описание */}
             <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              {t('hero.description')}
+              Загрузка...
             </p>
 
             {/* Кнопки действий */}
@@ -106,14 +104,14 @@ function Home() {
                 href="#projects" 
                 className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 flex items-center gap-2"
               >
-                <span>{t('Projects.ViewProjects')}</span>
+                <span>Посмотреть проекты</span>
                 <FaArrowDown className="group-hover:translate-y-1 transition-transform duration-300" />
               </a>
               <a 
                 href="#contact" 
                 className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold rounded-lg transition-all duration-300 backdrop-blur-sm hover:border-white/20"
               >
-                {t('contact.title')}
+                Связаться со мной
               </a>
             </div>
 

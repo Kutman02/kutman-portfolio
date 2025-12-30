@@ -5,7 +5,6 @@
 import { useEffect } from 'react';
 import SkillBadge from './SkillBadge';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fetchSkills } from '../store/slices/skillsSlice';
 import type { Skill } from '../types/models';
@@ -14,7 +13,6 @@ import type { Skill } from '../types/models';
  * Компонент секции "Обо мне"
  */
 function About() {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const [leftRef, isLeftVisible] = useScrollAnimation();
   const [rightRef, isRightVisible] = useScrollAnimation(0.2);
@@ -30,7 +28,7 @@ function About() {
   return (
     <section id="about" className="py-16 md:py-24 bg-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">{t('about.title')}</h2>
+        <h2 className="section-title">Обо мне</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <div
             ref={leftRef}
@@ -39,7 +37,7 @@ function About() {
             }`}
           >
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-              {t('about.longDescription')}
+              Я Frontend-разработчик с опытом создания современных веб-приложений. Специализируюсь на React, TypeScript и современных инструментах разработки.
             </p>
           </div>
 
@@ -49,7 +47,7 @@ function About() {
               isRightVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'
             }`}
           >
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 md:mb-6">{t('about.skills')}</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 md:mb-6">Навыки</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
               {allSkills.map((skill: string, index: number) => (
                 <SkillBadge key={index} skill={skill} />

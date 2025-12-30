@@ -6,13 +6,11 @@ import { useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fetchProjects } from '../store/slices/projectsSlice';
-import { useTranslation } from 'react-i18next';
 
 /**
  * Компонент секции проектов
  */
 function Projects() {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { items: projects, loading } = useAppSelector((state) => state.projects);
 
@@ -52,7 +50,7 @@ function Projects() {
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
-              {t('Projects.myProjects')}
+              Мои проекты
             </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>

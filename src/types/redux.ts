@@ -2,7 +2,7 @@
  * @fileoverview Типы для Redux Store и State
  */
 
-import { Project, Skill, Contact, Translation } from './models';
+import { Project, Skill, Contact } from './models';
 
 export interface AuthState {
   token: string | null;
@@ -47,13 +47,6 @@ export interface ResumeState {
   error: string | null;
 }
 
-export interface TranslationsState {
-  items: Translation[];
-  currentTranslation: Translation | null;
-  loading: boolean;
-  error: string | null;
-}
-
 export interface RootState {
   auth: AuthState;
   projects: ProjectsState;
@@ -61,5 +54,4 @@ export interface RootState {
   contacts: ContactsState;
   profile: ProfileState;
   resume: ResumeState;
-  translations: TranslationsState;
 }

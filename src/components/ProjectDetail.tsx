@@ -4,7 +4,6 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fetchProjectById, clearCurrentProject } from '../store/slices/projectsSlice';
 import Navbar from './Navbar';
@@ -16,7 +15,6 @@ import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaPlay, FaTimes, FaChevronLef
 function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { currentProject: project, loading } = useAppSelector((state) => state.projects);
   const [selectedImage, setSelectedImage] = useState(0);

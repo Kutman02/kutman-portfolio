@@ -44,16 +44,6 @@ function AdminLayout() {
               Проекты
             </Link>
             <Link
-              to="/admin/translations"
-              className={`block px-4 py-2 rounded-lg transition-colors ${
-                isActive('/admin/translations') 
-                  ? 'bg-blue-600 text-white' 
-                  : 'text-gray-300 hover:bg-gray-700'
-              }`}
-            >
-              Переводы
-            </Link>
-            <Link
               to="/admin/skills"
               className={`block px-4 py-2 rounded-lg transition-colors ${
                 isActive('/admin/skills') 

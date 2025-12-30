@@ -4,7 +4,6 @@
 
 import { useEffect } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fetchContacts } from '../store/slices/contactsSlice';
 import { fetchResume } from '../store/slices/resumeSlice';
@@ -31,7 +30,6 @@ const iconMap = {
  * Компонент секции контактов
  */
 function Contact() {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const [contactMethodsRef, isContactMethodsVisible] = useScrollAnimation();
   const contacts = useAppSelector((state) => state.contacts.items);
@@ -54,7 +52,7 @@ function Contact() {
   return (
     <section id="contact" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">{t('contact.title')}</h2>
+        <h2 className="section-title">Связаться со мной</h2>
 
         <div className="max-w-3xl mx-auto">
           <div
