@@ -22,6 +22,12 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (token && config.headers) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+  
+  // Убеждаемся, что запросы к /auth/login всегда используют POST метод
+  if (config.url?.includes('/auth/login') && config.method?.toLowerCase() !== 'post') {
+    console.warn('Invalid method for /auth/login endpoint. Expected POST, got:', config.method);
+  }
+  
   return config;
 });
 
