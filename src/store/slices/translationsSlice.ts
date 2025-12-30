@@ -49,7 +49,11 @@ export const updateTranslation = createAsyncThunk<
   { rejectValue: string }
 >('translations/updateTranslation', async ({ language, data }, { rejectWithValue }) => {
   try {
-    const response = await api.put<TranslationApiResponse>(`/translations/${language}`, { data });
+    // API использует POST /api/translations для createOrUpdate
+    const response = await api.post<TranslationApiResponse>('/translations', { 
+      language,
+      data 
+    });
     return {
       _id: '',
       language: language as 'en' | 'ru',
