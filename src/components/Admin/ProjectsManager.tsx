@@ -2,18 +2,19 @@ import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchProjects, createProject, updateProject, deleteProject, clearError } from '../../store/slices/projectsSlice';
 import api from '../../utils/api';
+import type { Project } from '../../types/models';
 
 function ProjectsManager() {
   const dispatch = useAppDispatch();
   const { items: projects, loading, error } = useAppSelector((state) => state.projects);
   const [showModal, setShowModal] = useState(false);
-  const [editingProject, setEditingProject] = useState(null);
+  const [editingProject, setEditingProject] = useState<Project | null>(null);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     technologies: '',
     image: '',
-    images: [],
+    images: [] as string[],
     youtubeVideo: '',
     github: '',
     demo: '',
@@ -33,8 +34,8 @@ function ProjectsManager() {
     }
   }, [error, dispatch]);
 
-  const handleFileUpload = async (e, isMain = true) => {
-    const file = e.target.files[0];
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, isMain = true) => {
+    const file = e.target.files?.[0];
     if (!file) return;
 
     // Проверка лимита для дополнительных изображений
@@ -60,7 +61,7 @@ function ProjectsManager() {
       });
 
       const imageUrl = response.data.fullUrl || 
-        `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:8081'}${response.data.url}`;
+        `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'https://kutmanportfolioserver.onrender.com/'}${response.data.url}`;
       
       if (isMain) {
         setFormData({ ...formData, image: imageUrl });
@@ -79,12 +80,12 @@ function ProjectsManager() {
     }
   };
 
-  const handleRemoveImage = (index) => {
+  const handleRemoveImage = (index: number) => {
     const newImages = formData.images.filter((_, i) => i !== index);
     setFormData({ ...formData, images: newImages });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (!formData.title || !formData.title.trim()) {
@@ -108,7 +109,7 @@ function ProjectsManager() {
       return;
     }
 
-    let technologiesArray = [];
+    let technologiesArray: string[] = [];
     if (formData.technologies && formData.technologies.trim()) {
       technologiesArray = formData.technologies
         .split(',')
@@ -116,7 +117,7 @@ function ProjectsManager() {
         .filter(t => t.length > 0);
     }
 
-    let featuresArray = [];
+    let featuresArray: string[] = [];
     if (formData.features && formData.features.trim()) {
       featuresArray = formData.features
         .split(',')
@@ -127,13 +128,13 @@ function ProjectsManager() {
     const projectData = {
       title: formData.title.trim(),
       description: formData.description.trim(),
-      technologies: technologiesArray,
+      technologies: technologiesArray.join(', '),
       image: formData.image.trim(),
       images: formData.images || [],
       youtubeVideo: formData.youtubeVideo?.trim() || '',
       github: formData.github?.trim() || '',
       demo: formData.demo?.trim() || '',
-      features: featuresArray
+      features: featuresArray.join(', ')
     };
 
     try {
@@ -162,7 +163,7 @@ function ProjectsManager() {
     }
   };
 
-  const handleEdit = (project) => {
+  const handleEdit = (project: Project) => {
     setEditingProject(project);
     setFormData({
       title: project.title,
@@ -178,7 +179,7 @@ function ProjectsManager() {
     setShowModal(true);
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: string) => {
     if (!confirm('Вы уверены, что хотите удалить этот проект?')) return;
 
     try {
@@ -225,7 +226,7 @@ function ProjectsManager() {
             Проекты не найдены
           </div>
         ) : (
-          projects.map((project) => (
+          projects.map((project: Project) => (
             <div key={project._id} className="bg-gray-800 rounded-lg p-4">
               <img
                 src={project.image}
@@ -276,7 +277,7 @@ function ProjectsManager() {
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg"
-                  rows="3"
+                  rows={3}
                   required
                 />
               </div>
@@ -397,7 +398,7 @@ function ProjectsManager() {
                   value={formData.features}
                   onChange={(e) => setFormData({ ...formData, features: e.target.value })}
                   className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg"
-                  rows="3"
+                  rows={3}
                   placeholder="Feature 1, Feature 2, Feature 3"
                 />
               </div>

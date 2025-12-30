@@ -31,8 +31,8 @@ function ProfileManager() {
     }
   }, [error, dispatch]);
 
-  const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (!file) return;
 
     setUploading(true);
@@ -47,7 +47,7 @@ function ProfileManager() {
       });
 
       const imageUrl = response.data.fullUrl || 
-        `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:8081'}${response.data.url}`;
+        `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'https://kutmanportfolioserver.onrender.com/'}${response.data.url}`;
       setFormData({ ...formData, profilePhoto: imageUrl });
     } catch (error) {
       console.error('Error uploading file:', error);
@@ -57,7 +57,7 @@ function ProfileManager() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSaving(true);
     try {

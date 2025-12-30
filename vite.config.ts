@@ -9,11 +9,11 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:8081',
+        target: 'https://kutmanportfolioserver.onrender.com/',
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'http://localhost:8081',
+        target: 'https://kutmanportfolioserver.onrender.com/',
         changeOrigin: true,
       },
     },

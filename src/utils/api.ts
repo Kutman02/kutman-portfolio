@@ -4,7 +4,7 @@
 
 import axios, { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8081/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://kutmanportfolioserver.onrender.com/api';
 
 /**
  * Axios instance с базовой конфигурацией

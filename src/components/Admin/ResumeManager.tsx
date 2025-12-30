@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchResume, updateResume, clearError } from '../../store/slices/resumeSlice';
 import api from '../../utils/api';
-import { FaFilePdf, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaFilePdf } from 'react-icons/fa';
+import type { AxiosError } from 'axios';
 
 function ResumeManager() {
   const dispatch = useAppDispatch();
@@ -34,8 +35,8 @@ function ResumeManager() {
     }
   }, [error, dispatch]);
 
-  const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (!file) return;
 
     setUploading(true);
@@ -50,14 +51,15 @@ function ResumeManager() {
       });
 
       const fileUrl = response.data.fullUrl || 
-        `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:8081'}${response.data.url}`;
+        `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'https://kutmanportfolioserver.onrender.com/'}${response.data.url}`;
       
       setFormData({ ...formData, file: fileUrl, fileUrl: fileUrl });
       alert('Файл успешно загружен!');
-    } catch (error) {
-      console.error('Error uploading file:', error);
+    } catch (err) {
+      console.error('Error uploading file:', err);
       let errorMessage = 'Ошибка загрузки файла';
       
+      const error = err as AxiosError<{ error?: string; message?: string }>;
       if (error.response) {
         errorMessage = error.response.data?.error || error.response.data?.message || errorMessage;
       } else if (error.request) {
