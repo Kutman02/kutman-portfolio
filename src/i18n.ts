@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import api from './utils/api';
+import type { AxiosError } from 'axios';
 
 // Дефолтные переводы (минимальные, используются только если API недоступен)
 const defaultTranslations = {
@@ -24,8 +25,16 @@ const defaultTranslations = {
 const loadTranslationsFromAPI = async () => {
   try {
     const [enRes, ruRes] = await Promise.all([
-      api.get('/translations/en').catch(() => ({ data: { data: null } })),
-      api.get('/translations/ru').catch(() => ({ data: { data: null } }))
+      api.get('/translations/en').catch((error: AxiosError) => {
+        // Тихая обработка 404 - переводы могут еще не существовать на сервере
+        // Это нормальная ситуация, не требует логирования
+        return { data: { data: null } };
+      }),
+      api.get('/translations/ru').catch((error: AxiosError) => {
+        // Тихая обработка 404 - переводы могут еще не существовать на сервере
+        // Это нормальная ситуация, не требует логирования
+        return { data: { data: null } };
+      })
     ]);
 
     const resources = {
@@ -42,7 +51,6 @@ const loadTranslationsFromAPI = async () => {
       i18n.addResourceBundle(lang, 'translation', resources[lang].translation, true, true);
     });
   } catch (error) {
-    console.error('Error loading translations from API:', error);
     // Используем дефолтные переводы как fallback
     i18n.addResourceBundle('en', 'translation', defaultTranslations.en, true, true);
     i18n.addResourceBundle('ru', 'translation', defaultTranslations.ru, true, true);

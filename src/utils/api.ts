@@ -25,4 +25,18 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   return config;
 });
 
+// Suppress 404 errors for translation endpoints (they may not exist yet)
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    // Если это 404 для эндпоинтов переводов, не логируем ошибку в консоль
+    if (error.response?.status === 404 && error.config?.url?.includes('/translations/')) {
+      // Возвращаем ошибку, но она будет обработана в catch блоках
+      return Promise.reject(error);
+    }
+    // Для всех остальных ошибок - стандартная обработка
+    return Promise.reject(error);
+  }
+);
+
 export default api;
